@@ -26,14 +26,40 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+var j=1;
 function displayNext() {
     /*Write your code here */
+
+    document.getElementById("question").innerHTML = questions[j].question;
+
+    var ul = document.getElementById("choice-list");
+    ul.classList.add("list-group");
+
+    ul.innerHTML="";
+
+    for (var i = 0; i < 4; i++) {
+
+        var li = document.createElement('li');
+        li.innerHTML = '<input type="radio" name="choice" value="'+i+'">'+questions[j].choices[i];
+        ul.appendChild(li);
+    }
+    j++;
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
-}
+    document.getElementById("question").innerHTML = questions[0].question;
 
+    var ul = document.getElementById("choice-list");
+    ul.classList.add("list-group");
+
+    for (var i = 0; i < 4; i++) {
+
+        var li = document.createElement('li');
+        li.innerHTML = '<input type="radio" name="choice" value="'+i+'">'+questions[0].choices[i];
+        ul.appendChild(li);
+    }
+}
 function resetQuiz() {
     currentQuestion = 0;
     correctAnswers = 0;
