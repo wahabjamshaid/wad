@@ -5,7 +5,7 @@ if(!isset($_SESSION['user_email'])){
 }
 if(isset($_GET['insert_pro']))
 {
-    //getting text data from the fields
+    //getting text data fro8m the fields
     $cat_title = $_GET['cat_title'];
     $insert_cat_title = "insert into categories (cat_title) 
                   VALUES ('$cat_title');";
