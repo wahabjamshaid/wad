@@ -25,7 +25,7 @@ require "server/functions.php";
                         document.getElementById("hint").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET", "check_product.php?e=" + str, true);
+                xmlhttp.open("GET", "search.php?e=" + str, true);
                 xmlhttp.send();
             }
         }
